@@ -13,8 +13,8 @@ Restaurant management system have four modules namely Customer, Admin, Kitchen M
     
 Technologies used: 
 
--HTML
--CSS 
+- HTML
+- CSS 
 -Bootstrap
 -Angular Material
 -Prime NG
