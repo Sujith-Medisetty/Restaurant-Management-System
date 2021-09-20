@@ -11,7 +11,7 @@ Restaurant management system have four modules namely Customer, Admin, Kitchen M
              Admin can add dishes, customize the dishes, add/remove Kitchen master, add/remove supervisor. 
     
     
-##Technologies used: 
+## Technologies used: 
 
 - HTML
 - CSS 
@@ -22,7 +22,7 @@ Restaurant management system have four modules namely Customer, Admin, Kitchen M
 - Spring Boot
 - Hibernate.
 
-##Features
+## Features
 - Admin can add, edit, delete Items, Chefs, Supervisors.
 - Customer can customize his/her order and place the order.
 - Placed orders are displayed in Chef dashboard
