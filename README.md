@@ -32,7 +32,7 @@ To-Do list:
 - Should use JWT for User Authentication
 
 ## Getting Started
-- Front-end part
+- **Front-end part**
   - install angular
     - npm install -g @angular/cli
   - Crate new Angular Application
@@ -45,7 +45,7 @@ To-Do list:
   - Run angular application
     - ng serve --open
 
-- Back-end part
+- **Back-end part**
   - Installing STS
       - The easiest way to install STS is right from within Eclipse. Just select Help > Eclipse Marketplace… from the main menu and type “STS” in the search bar of the Eclipse Marketplace dialog.
   - Creating a New Project
@@ -55,7 +55,7 @@ To-Do list:
   - Project Dependencies
       - In the New Spring Starter Project Dependencies window, use the search field and type “web” into it, we can choose the dependencies we want in out project
 
-- Push Project to Github
+- **Push Project to Github**
   - Initialize the local directory as a Git repository.
     - git init
   - Use git status to know the status of your application
