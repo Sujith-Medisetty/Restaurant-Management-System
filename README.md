@@ -31,6 +31,21 @@ Restaurant management system have four modules namely Customer, Admin, Kitchen M
 To-Do list:
 - Should use JWT for User Authentication
 
+## Getting Started
+- Front-end part
+  - install angular
+    - npm install -g @angular/cli
+  - Crate new Angular Application
+    - ng new <Application-Name>
+  - Create Components, Pipes, Modules, Guards, Routing based on requirement
+    - ng generate component <component-name>
+    - ng generate pipe <pipe-name>
+    - ng generate module <module-name>
+    - ng generate guard <your-guard-name>
+  - Run angular application
+    - ng serve --open
+  
+
 
 
 
