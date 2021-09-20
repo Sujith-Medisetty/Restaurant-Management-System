@@ -74,6 +74,12 @@ To-Do list:
   - use git clone to clone your repository to local machine
     - git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
+- **Usage**
+  - open website and login based on role
+  - Customer can login and add items to cart, customize the items added to cart, choose a payment mode, place the order.
+  - Admin can login to his account, can (Add, Edit, Delete) Items, Chefs, Supervisors.
+  - Chef can login to his account, Serve the orders placed.
+  - Supervisor resolves the customer quaries.
 
 
 
