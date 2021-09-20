@@ -1,8 +1,9 @@
 # Restaurant-Management-System
 
-## There are 2 more branches 1. Angular Branch contain Angular part of this application. 2. Spring Branch contain Spring part of this application
+## Note:
+**There are 2 more branches 1. Angular Branch contain Angular part of this application. 2. Spring Branch contain Spring part of this application**
 
-Project Description: 
+## Project Description: 
 
 Restaurant management system have four modules namely Customer, Admin, Kitchen Master, Supervisor.
              Customer can order the dishes, customize the dishes before placing order. Customer should choose a paymentmode before placing order, A bill is generated after          payment. 
@@ -74,7 +75,7 @@ To-Do list:
   - use git clone to clone your repository to local machine
     - git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
-- **Usage**
+## Usage
   - open website and login based on role
   - Customer can login and add items to cart, customize the items added to cart, choose a payment mode, place the order.
   - Admin can login to his account, can (Add, Edit, Delete) Items, Chefs, Supervisors.
