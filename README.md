@@ -16,14 +16,14 @@ Restaurant management system have four modules namely Customer, Admin, Kitchen M
     
 ## Technologies used: 
 
-- HTML
-- CSS 
-- Bootstrap
+- HTM, CSS 
+- Bootstrap 4
 - Angular Material
 - Prime NG
-- Angular10
+- Angular 10
 - Spring Boot
-- Hibernate.
+- Hibernate 5.3
+- Log4J
 
 ## Features
 - Admin can add, edit, delete Items, Chefs, Supervisors.
