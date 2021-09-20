@@ -2,7 +2,7 @@
 
 ## There are 2 more branches 1. Angular Branch contain Angular part of this application. 2. Spring Branch contain Spring part of this application
 
-Description: 
+Project Description: 
 
 Restaurant management system have four modules namely Customer, Admin, Kitchen Master, Supervisor.
              Customer can order the dishes, customize the dishes before placing order. Customer should choose a paymentmode before placing order, A bill is generated after          payment. 
@@ -13,6 +13,13 @@ Restaurant management system have four modules namely Customer, Admin, Kitchen M
     
 Technologies used: 
 
-HTML, CSS, Bootstrap, Angular Material, Prime NG, Angular10, Spring Boot, Hibernate.
+-HTML
+-CSS 
+-Bootstrap
+-Angular Material
+-Prime NG
+-Angular10
+-Spring Boot
+-Hibernate.
 
 
