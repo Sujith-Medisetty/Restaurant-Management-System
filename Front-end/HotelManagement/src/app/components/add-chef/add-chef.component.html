@@ -1,0 +1,58 @@
+<form #userform="ngForm" (ngSubmit)="onsubmit(); userform.reset()">
+
+    <div class="row">
+
+        <h3 class="text-center">ADD CHEF</h3>
+
+        <div class="form-group col-md-12 my-3">
+            <label for="#kname" class="mb-1">Chef Name <span style="color:red;">*</span></label>
+            <input type="text" class="form-control" id="kname" #kname="ngModel" [class.is-invalid]="kname.invalid && kname.touched" required [class.is-valid]="kname.valid && kname.dirty" pattern="^([ a-zA-Z0-9,@#$%^&*(),.:;-_]+){2,100}$" name="kname" [(ngModel)]="data.kitchenMaster.kname">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                chef name should be of length 2 to 100 and only space, alphabets, Digits are only accepted.
+            </div>
+        </div>
+
+        <div class="form-group col-md-12 my-3">
+            <label for="#kemail" class="mb-1">Chef Email <span style="color:red;">*</span></label>
+            <input type="email" class="form-control" id="kemail" #kemail="ngModel" [class.is-invalid]="kemail.invalid && kemail.touched" required [class.is-valid]="kemail.valid && kemail.dirty" pattern="^([a-zA-Z0-9]){1,20}@gmail.com$" name="kemail" [(ngModel)]="data.kitchenMaster.kemail">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                chef email should be of length 2 to 100 and only space, alphabets, Digits are only accepted.
+            </div>
+        </div>
+
+        <div class="form-group col-md-12 my-3">
+            <label for="#kpassword" class="mb-1">Chef Password <span style="color:red;">*</span></label>
+            <input type="text" class="form-control" id="kpassword" #kpassword="ngModel" [class.is-invalid]="kpassword.invalid && kpassword.touched" required [class.is-valid]="kpassword.valid && kpassword.dirty" pattern="^([a-zA-Z0-9,@#$%^&*(),.:;-_]+){2,100}$" name="kpassword"
+                [(ngModel)]="data.kitchenMaster.kpassword">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                chef password should be of length 2 to 100 and only space, alphabets, Digits are only accepted.
+            </div>
+        </div>
+
+        <div class="form-group col-md-12 my-3">
+            <label for="#kphone" class="mb-1">Chef Phone <span style="color:red;">*</span></label>
+            <input type="text" class="form-control" id="kphone" #kphone="ngModel" [class.is-invalid]="kphone.invalid && kphone.touched" required [class.is-valid]="kphone.valid && kphone.dirty" pattern="^([0-9]){10}$" name="kphone" [(ngModel)]="data.kitchenMaster.kphone">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Item name should be of length 2 to 100 and only space, alphabets, Digits are only accepted.
+            </div>
+        </div>
+
+
+        <button [disabled]="userform.form.invalid" class="btn btn-primary col-4 mx-auto my-3">Add Chef</button>
+        <button class="btn btn-primary col-4 mx-auto my-3" [mat-dialog-close]>Close</button>
+
+
+    </div>
+</form>

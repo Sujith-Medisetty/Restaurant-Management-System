@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.big-image {
+    color: white;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url("https://www.wspinacze.com/pl/news/wp-content/uploads/2020/05/naukowcy-twierdza-ze-zywnosc-zawierajaca-tluszcze-obniza-koncentracje-wspinacze-com-wiadomosci-informacje.jpg");
+}
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgb(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-item a {
+    cursor: pointer;
+}
+
+.nav-item a:hover {
+    transform: scalex(1.1)
+}
+
+.bg-dark {
+    background: transparent !important;
+}
+
+.bg-dark.scrollDone {
+    background: white !important;
+    color: rgb(173, 151, 151) !important;
+}
+
+.navbar-toggler {
+    border: blue;
+}

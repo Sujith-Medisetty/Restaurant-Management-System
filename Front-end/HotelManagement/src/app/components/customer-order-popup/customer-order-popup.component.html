@@ -1,0 +1,67 @@
+<div class="card">
+
+    <p-table #dt1 [value]="data.cartList" dataKey="iid" styleClass="p-datatable-striped">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Sno</th>
+                <th>Item</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Cost</th>
+                <th>Count </th>
+                <th>Total Cost</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product let-ri="rowIndex" styleClass="table-decor">
+            <tr>
+                <td>
+                    {{ri+1}}
+                </td>
+                <td>
+                    <img src="data:image/JPEG;base64,{{product.picByte}}" class="card-img-top" alt="..." style="width: 100px;">
+                </td>
+                <td>{{product.iname}}</td>
+                <td>{{product.idesc}}</td>
+                <td>{{product.iftype}}</td>
+                <td>{{product.icost}}</td>
+                <td>
+                    <span> {{product.icount}}</span>
+                </td>
+                <td style="font-weight: 700;" class="text-primary">{{product.icost*product.icount}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+<form #userform="ngForm" (ngSubmit)="onsubmit(); userform.reset()">
+    <div class="" style="position: relative;bottom: 0px;box-shadow: 1px 2px 35px lightcoral;z-index:1;">
+        <div class="container px-4 py-2">
+            <div class="row">
+                <div class="col-10 justify-content-around">
+
+                    <div class="d-flex justify-content-around w-50">
+                        <span style="color: red;font-weight: bolder;margin-bottom: 10px;">
+                        PAYMENT MODE
+                    </span>
+                        <span class="form-check" style="cursor: pointer;">
+                        <input class="form-check-input" type="radio" name="paymentmode" value="gpay" id="gpay" required [(ngModel)]="paymentmode">
+                        <label for="gpay"><img src="https://www.searchpng.com/wp-content/uploads/2019/02/Google-Pay-Logo-Icon-PNG-715x714.png" alt="" style="width:50px;"></label>
+                    </span>
+                        <span class="form-check" style="cursor: pointer;">
+                        <input type="radio" class="form-check-input" name="paymentmode" value="phonepe" id="phonepe" required [(ngModel)]="paymentmode">
+                        <label for="phonepe"> <img src="https://www.searchpng.com/wp-content/uploads/2018/11/phone-pe-715x715.png" alt="" style="width:50px;"></label>
+                    </span>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <span class="ms-auto">Total&nbsp;&nbsp;:&nbsp;&nbsp;
+                    <span style="font-weight: bold;" class="text-primary">{{itemscost}}</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="container text-end px-4 py-2">
+            <button class="btn btn-primary" [disabled]="userform.form.invalid">PAY NOW</button>
+        </div>
+    </div>
+</form>

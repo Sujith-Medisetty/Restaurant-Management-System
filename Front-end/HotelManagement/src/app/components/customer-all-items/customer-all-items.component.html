@@ -1,0 +1,50 @@
+<p-carousel [value]="SpecialUrls" [numVisible]="5" [numScroll]="5" [circular]="false" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+    <ng-template pTemplate="header">
+        <h5 class="text-center m-2 mb-4 text-primary">PAPADAMS SPECIAL</h5>
+    </ng-template>
+    <ng-template let-item pTemplate="item">
+        <div class="row">
+            <div class="card" style="width: 18rem; height: 18rem;">
+                <img [src]=item.img class="four card-img-top" alt="..." style="width: 97%;">
+                <span class="m-1 text-center mt-2">{{item.name}}</span>
+            </div>
+        </div>
+    </ng-template>
+</p-carousel>
+
+<div class="container" style="padding-top: 3rem;">
+    <h5 class="text-center m-2 mb-4 text-primary">MENU</h5>
+    <div class="row">
+        <div class="card m-2" *ngFor="let item of itemsList" style="width: 18rem;">
+            <img src="data:image/JPEG;base64,{{item.picByte}}" class="three card-img-top" alt="...">
+            <div class="card-body below-image-margin" style="padding:0px !important;">
+                <div class="card-title food-title">{{item.iname | titlecase}}</div>
+                <p class="card-text food-sub-title">{{item.idesc}}</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div style="display: flex;justify-content: space-between; ">
+                            <div>Rs. {{item.icost}}</div>
+                            <div style="display: flex;">
+                                <div style="width: 1px;height: 1px;margin-top:9px;margin-right: 10px;" [style.border]="item.iftype==='Veg' ? '3px solid green' : '3px solid red'" [style.background]="item.iftype==='Veg' ? 'green' : 'red' "></div><span [style.color]="item.iftype==='Veg' ? 'green' : 'red' ">{{item.iftype}}</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item text-center">
+                        <div *ngIf="item.icount==0" class="btn btn-sm btn-primary mt-2" style="width: 100px !important;" (click)="incre(item.iid)">Add</div>
+                        <div *ngIf="item.icount!=0" class="disable-select">
+                            <div class="button" (click)="decre(item.iid)">-</div>
+                            <div class="button">{{item.icount}}</div>
+                            <div class="button" (click)="incre(item.iid)">+</div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--
+ 
+ -->

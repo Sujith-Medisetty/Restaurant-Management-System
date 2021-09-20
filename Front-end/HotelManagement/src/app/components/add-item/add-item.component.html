@@ -1,0 +1,67 @@
+<form #userform="ngForm" (ngSubmit)="onsubmit(userform); userform.reset()">
+
+    <div class="row">
+
+        <h3 class="text-center">ADD ITEM</h3>
+
+        <div class="form-group col-md-12 my-3">
+            <label for="#iname" class="mb-1">Item Name <span style="color:red;">*</span></label>
+            <input type="text" class="form-control" id="iname" #iname="ngModel" [class.is-invalid]="iname.invalid && iname.touched" required [class.is-valid]="iname.valid && iname.dirty" pattern="^([ a-zA-Z0-9,@#$%^&*(),.:;-_]+){2,100}$" name="iname" [(ngModel)]="data.item.iname">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Item name should be of length 2 to 100 and only space, alphabets, Digits are only accepted.
+            </div>
+        </div>
+
+        <div class="form-group col-md-12 my-3">
+            <label for="#idesc" class="mb-1">Item Description <span style="color:red;">*</span></label>
+            <input type="text" class="form-control" id="idesc" #idesc="ngModel" [class.is-invalid]="idesc.invalid && idesc.touched" required [class.is-valid]="idesc.valid && idesc.dirty" pattern="^([ a-zA-Z0-9,@#$%^&*(),.:;-_]){2,100}$" name="idesc" [(ngModel)]="data.item.idesc">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Item description should be of length 2 to 100 and only space, alphabets, Digits are only accepted.
+            </div>
+        </div>
+
+        <div class="form-group col-md-12 my-3">
+            <label for="#icost" class="mb-1">Item Cost <span style="color:red;">*</span></label>
+            <input type="text" class="form-control" id="icost" #icost="ngModel" [class.is-invalid]="icost.invalid && icost.touched" required [class.is-valid]="icost.valid && icost.dirty" pattern="^([0-9]){2,10}$" name="icost" [(ngModel)]="data.item.icost">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Item cost should be of length 2 to 10 and Digits are only accepted.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="mb-1">Select Food Type <span style="color:red;">*</span></label>
+            <select class="form-select col-md-12 mb-3 mt-1" required id="iftype" #iftype="ngModel" [class.is-invalid]="iftype.invalid && iftype.touched" [class.is-valid]="iftype.valid && iftype.dirty" name="iftype" [(ngModel)]="data.item.iftype">
+            <option value="Veg" selected>Veg</option>
+            <option value="Non-Veg">Non-Veg</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+            <label class="">Select Food Category<span style="color:red;">*</span></label>
+            <select class="form-select col-md-12 mb-3 mt-1 " required id="ift" #ift="ngModel" [class.is-invalid]="ift.invalid && ift.touched" [class.is-valid]="ift.valid && ift.dirty" name="ift" [(ngModel)]="data.item.ift">
+        <option value="BreakFast" selected>BreakFast</option>
+        <option value="Lunch">Lunch</option>
+      </select>
+        </div>
+
+        <div class="form-group col-md-12 my-3">
+            <label for="#iimg" class="mb-1">Item Image <span style="color:red;">*</span></label>
+            <div class="input-group">
+                <input type="file" (change)="onFileChanged($event)" class="form-control" id="inputGroupFile04">
+            </div>
+        </div>
+
+        <button [disabled]="userform.form.invalid" class="btn btn-primary col-4 mx-auto my-3">Add Item</button>
+        <button class="btn btn-primary col-4 mx-auto my-3" [mat-dialog-close]>Close</button>
+
+    </div>
+</form>

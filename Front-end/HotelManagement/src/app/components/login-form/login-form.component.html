@@ -1,0 +1,33 @@
+<form #userform="ngForm" (ngSubmit)="onsubmit(userform); userform.reset()">
+
+    <div class="row">
+
+        <span class="text-center text-primary" style="font-size: 25px;"><i class="fas fa-sign-in-alt mx-3"></i>{{data.login.role | uppercase}}&nbsp;&nbsp;{{"LOGIN"}}</span>
+
+        <div class="form-group col-12 my-3">
+            <label for="#email" class="mb-1">Registered Email Id</label>
+            <input type="email" class="form-control" id="email" #email="ngModel" [class.is-invalid]="email.invalid && email.touched" required [class.is-valid]="email.valid && email.dirty" pattern="^([a-zA-Z0-9]){1,}@gmail.com$" name="email" [(ngModel)]="data.login.email">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Invalid email id or password
+            </div>
+        </div>
+
+        <div class="form-group col-12 my-3">
+            <label for="#password" class="mb-1">Password</label>
+            <input type="password" class="form-control" id="password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" required [class.is-valid]="password.valid && password.dirty" name="password" [(ngModel)]="data.login.password">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Invalid email id or password
+            </div>
+        </div>
+
+        <button [disabled]="userform.form.invalid" class="btn btn-primary col-4 mx-auto my-3">Login</button>
+        <button class="btn btn-primary col-4 mx-auto my-3" [mat-dialog-close]>Close</button>
+
+    </div>
+</form>

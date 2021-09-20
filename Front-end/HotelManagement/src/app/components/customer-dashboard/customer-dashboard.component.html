@@ -1,0 +1,43 @@
+<div>
+    <nav class="navbar navbar-expand-lg fixed-top bg-light navbar-primary px-3 mb-3" style="box-shadow: 1px 2px 5px #e6e6e6;">
+        <div class="container">
+            <a class="navbar-brand">
+                <i class="fas fa-utensils px-3"></i>
+                <span class="" style="font-size: 25px;">PAPADAMS</span>
+
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+              <span class="navbar-toggler-icon">
+                <i class="fas fa-bars" style="font-size:28px;"></i>
+              </span>
+           </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="ms-auto">
+                    <span class="text-primary">Welcome &nbsp;&nbsp;{{logged}}</span>
+                </div>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 px-3 px-lg-0 mt-3 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active pe-3" style="font-weight: 500;" routerLink="Items" routerLinkActive="active-class">Items</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active pe-3" style="font-weight: 500;" routerLink="Cart" routerLinkActive="active-class">Cart<span id="badge">{{cartcount}}</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active pe-3" style="font-weight: 500;" routerLink="Orders" routerLinkActive="active-class">Orders</a>
+                    </li>
+                    <li class="nav-item" style="cursor: pointer;">
+                        <a class="nav-link active ps-auto text-danger" style="font-weight: 500;" (click)="logout()">Logout </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+<div style="margin-top:5rem;">
+    <router-outlet>
+    </router-outlet>
+</div>

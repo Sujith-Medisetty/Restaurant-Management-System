@@ -1,0 +1,68 @@
+<div class="card">
+
+    <p-table #dt1 [value]="cartList" dataKey="iid" editMode="row" [globalFilterFields]="['icost','icount','iftype','iname']" [paginator]="true" [rows]="10" [showCurrentPageReport]="true" responsiveLayout="scroll" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        styleClass="p-datatable-striped" [rowsPerPageOptions]="[5,10,15]">
+        <ng-template pTemplate="caption">
+            <div class="" style="text-align: end;">
+                <i class="pi pi-search mx-3"></i>
+                <span class="p-input-icon-left ms-auto">
+    <input pInputText type="text" (input)="dt1.filterGlobal(getEventValue($event), 'contains')" placeholder="Search keyword" />
+    </span>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Sno</th>
+                <th>Item</th>
+                <th pSortableColumn="iname">Name
+                    <p-sortIcon field="iname"></p-sortIcon>
+                </th>
+                <th>Description</th>
+                <th pSortableColumn="iftype">Type
+                    <p-sortIcon field="iftype"></p-sortIcon>
+                </th>
+                <th pSortableColumn="icost">Cost
+                    <p-sortIcon field="icost"></p-sortIcon>
+                </th>
+                <th pSortableColumn="icount">Count
+                    <p-sortIcon field="icount"></p-sortIcon>
+                </th>
+                <th>Total Cost</th>
+                <th style="width:8rem"></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product let-editing="editing" let-ri="rowIndex" styleClass="table-decor">
+            <tr>
+                <td>
+                    {{ri+1}}
+                </td>
+                <td>
+                    <img src="data:image/JPEG;base64,{{product.picByte}}" class="card-img-top" alt="..." style="width: 100px;">
+                </td>
+                <td>{{product.iname}}</td>
+                <td>{{product.idesc}}</td>
+                <td>{{product.iftype}}</td>
+                <td>{{product.icost}}</td>
+                <td>
+                    <div *ngIf="product.icount==0" class="btn btn-sm btn-primary mt-2" style="width: 100px !important;" (click)="incre(product.iid)">Add</div>
+                    <div *ngIf="product.icount!=0" class="disable-select">
+                        <div class="button" (click)="decre(product.iid)">-</div>
+                        <div class="button">{{product.icount}}</div>
+                        <div class="button" (click)="incre(product.iid)">+</div>
+                    </div>
+                </td>
+                <td style="font-weight: 700;" class="text-primary">{{product.icost*product.icount}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+<nav class="navbar fixed-bottom bg-light navbar-light px-3 mb-2" style="box-shadow: 1px 2px 35px lightcoral;z-index:1;">
+    <div class="container text-end">
+        <div class="ms-auto">Total&nbsp;&nbsp;:&nbsp;&nbsp;
+            <span style="padding-right: 100px;font-weight: bold;" class="text-primary">{{itemscost}}</span>
+        </div>
+        <button class="btn btn-primary" (click)="order()">PLACE ORDER...</button>
+    </div>
+
+</nav>
