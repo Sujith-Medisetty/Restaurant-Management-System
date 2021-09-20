@@ -1,0 +1,58 @@
+<form #userform="ngForm" (ngSubmit)="onsubmit(); userform.reset()">
+
+    <div class="row">
+
+        <h3 class="text-center">ADD SUPERVISOR</h3>
+
+        <div class="form-group col-md-12 my-3">
+            <label for="#sname" class="mb-1">Supervisor Name <span style="color:red;">*</span></label>
+            <input type="text" class="form-control" id="sname" #sname="ngModel" [class.is-invalid]="sname.invalid && sname.touched" required [class.is-valid]="sname.valid && sname.dirty" pattern="^([ a-zA-Z0-9,@#$%^&*(),.:;-_]+){2,100}$" name="sname" [(ngModel)]="data.supervisor.sname">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                chef name should be of length 2 to 100 and only space, alphabets, Digits are only accepted.
+            </div>
+        </div>
+
+        <div class="form-group col-md-12 my-3">
+            <label for="#semail" class="mb-1">Supervisor Email <span style="color:red;">*</span></label>
+            <input type="email" class="form-control" id="semail" #semail="ngModel" [class.is-invalid]="semail.invalid && semail.touched" required [class.is-valid]="semail.valid && semail.dirty" pattern="^([a-zA-Z0-9]){1,20}@gmail.com$" name="semail" [(ngModel)]="data.supervisor.semail">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                chef email should be of length 2 to 100 and only space, alphabets, Digits are only accepted.
+            </div>
+        </div>
+
+        <div class="form-group col-md-12 my-3">
+            <label for="#spassword" class="mb-1">Chef Password <span style="color:red;">*</span></label>
+            <input type="text" class="form-control" id="spassword" #spassword="ngModel" [class.is-invalid]="spassword.invalid && spassword.touched" required [class.is-valid]="spassword.valid && spassword.dirty" pattern="^([a-zA-Z0-9,@#$%^&*(),.:;-_]+){2,100}$" name="spassword"
+                [(ngModel)]="data.supervisor.spassword">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                chef password should be of length 2 to 100 and only space, alphabets, Digits are only accepted.
+            </div>
+        </div>
+
+        <div class="form-group col-md-12 my-3">
+            <label for="#sphone" class="mb-1">Chef Phone <span style="color:red;">*</span></label>
+            <input type="text" class="form-control" id="sphone" #sphone="ngModel" [class.is-invalid]="sphone.invalid && sphone.touched" required [class.is-valid]="sphone.valid && sphone.dirty" pattern="^([0-9]){10}$" name="sphone" [(ngModel)]="data.supervisor.sphone">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Item name should be of length 2 to 100 and only space, alphabets, Digits are only accepted.
+            </div>
+        </div>
+
+
+        <button [disabled]="userform.form.invalid" class="btn btn-primary col-4 mx-auto my-3">Add Supervisor</button>
+        <button class="btn btn-primary col-4 mx-auto my-3" [mat-dialog-close]>Close</button>
+
+
+    </div>
+</form>

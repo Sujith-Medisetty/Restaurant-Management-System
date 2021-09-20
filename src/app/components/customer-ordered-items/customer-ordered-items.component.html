@@ -1,0 +1,34 @@
+<div class="container text-primary">
+    <div *ngFor="let i of resultData;let in=index">
+        <h5>Order {{total-in}}</h5>
+        <table class="table">
+            <thead style="color: darkgoldenrod;">
+                <tr>
+                    <td scope="col">#</td>
+                    <td scope="col">Name</td>
+                    <td scope="col">Cost</td>
+                    <td scope="col">Count</td>
+                    <td scope="col">Payment-Mode</td>
+                    <td scope="col">Date</td>
+                    <td scope="col">Total Amount</td>
+                    <td scope="col">Status</td>
+                    <td scope="col">Help</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let j of i.products; let ind = index">
+                    <td>{{ind+1}}</td>
+                    <td>{{j.iname}}</td>
+                    <td>{{j.icost}}</td>
+                    <td>{{j.icount}}</td>
+                    <td>{{j.paymentmode}}</td>
+                    <td>{{j.date | date:"medium"}}</td>
+                    <td>{{(j.icost) * (j.icount)}}</td>
+                    <td *ngIf="j.orderstatus==1" class="text-success">Processed</td>
+                    <td *ngIf="j.orderstatus==0" class="text-danger">Processing...</td>
+                    <td><button class="btn btn-outline-primary btn-sm" (click)="help(j)">HELP</button> <span *ngIf="j.helpstatus==1"><div style="margin:10px;display: inline;width: 100%;height: 100%;border:1px solid red;background-color: red;"></div></span>                        <span *ngIf="j.helpstatus==0"><div style="margin:10px;display: inline;width: 100%;height: 100%;border:1px solid green;background-color: green;"></div></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

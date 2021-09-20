@@ -1,0 +1,13 @@
+#badge {
+    position: relative;
+    bottom: 10px;
+    background: lightskyblue;
+    padding: 5px;
+    color: black;
+    border-radius: 100px;
+    font-size: 11px;
+}
+
+.active-class {
+    color: deeppink;
+}

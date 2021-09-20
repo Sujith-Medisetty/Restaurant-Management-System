@@ -1,0 +1,23 @@
+.disable-select {
+    user-select: none;
+    /* supported by Chrome and Opera */
+}
+
+.nav-item a:hover {
+    transform: scalex(1.1);
+    cursor: pointer;
+}
+
+#badge {
+    position: relative;
+    bottom: 10px;
+    background: lightskyblue;
+    padding: 5px;
+    color: black;
+    border-radius: 100px;
+    font-size: 11px;
+}
+
+.active-class {
+    color: deeppink;
+}

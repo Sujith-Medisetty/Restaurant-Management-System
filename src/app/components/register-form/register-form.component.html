@@ -1,0 +1,55 @@
+<form #userform="ngForm" (ngSubmit)="onsubmit(userform); userform.reset()">
+
+    <div class="row">
+
+        <span class="text-center text-primary" style="font-size: 25px;"><i class="fas fa-sign-in-alt mx-3"></i>{{data.customerRegister.role | uppercase}}&nbsp;&nbsp;{{"Registration"}}</span>
+
+        <div class="form-group col-12 my-3">
+            <label for="#email" class="mb-1">Registered Email Id</label>
+            <input type="email" class="form-control" id="email" #email="ngModel" [class.is-invalid]="email.invalid && email.touched" required [class.is-valid]="email.valid && email.dirty" pattern="^([a-zA-Z0-9]){1,}@gmail.com$" name="email" [(ngModel)]="data.customerRegister.email">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Invalid email id or password
+            </div>
+        </div>
+
+        <div class="form-group col-12 my-3">
+            <label for="#password" class="mb-1">Password</label>
+            <input type="password" class="form-control" id="password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" required [class.is-valid]="password.valid && password.dirty" name="password" [(ngModel)]="data.customerRegister.password">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Invalid email id or password
+            </div>
+        </div>
+
+        <div class="form-group col-12 my-3">
+            <label for="#name" class="mb-1">Display Name</label>
+            <input type="name" class="form-control" id="name" #name="ngModel" [class.is-invalid]="name.invalid && name.touched" required [class.is-valid]="name.valid && name.dirty" pattern="^([a-zA-Z0-9]){3,20}$" name="name" [(ngModel)]="data.customerRegister.name">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Should be between 3 to 20 characters
+            </div>
+        </div>
+
+        <div class="form-group col-12 my-3">
+            <label for="#phone" class="mb-1">Phone number</label>
+            <input type="phone" class="form-control" id="phone" #phone="ngModel" [class.is-invalid]="phone.invalid && phone.touched" required [class.is-valid]="phone.valid && phone.dirty" pattern="^[1-9]{1}[0-9]{9}$" name="phone" [(ngModel)]="data.customerRegister.phone">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Should not start with 0 and it should be a 10 digit number.
+            </div>
+        </div>
+
+        <button [disabled]="userform.form.invalid" class="btn btn-primary col-4 mx-auto my-3">Register</button>
+        <button class="btn btn-primary col-4 mx-auto my-3" [mat-dialog-close]>Close</button>
+
+    </div>
+</form>

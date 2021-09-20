@@ -1,0 +1,33 @@
+<div class="container" style="padding-top: 8rem;">
+    <div class="row">
+        <div class="card m-2" *ngFor="let item of AllItems" style="width: 18rem;">
+            <img src="data:image/JPEG;base64,{{item.picByte}}" class="three card-img-top" alt="...">
+            <div class="card-body below-image-margin" style="padding:0px !important;">
+                <div class="card-title food-title">{{item.iname | titlecase}}</div>
+                <p class="card-text food-sub-title">{{item.idesc}}</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div style="display: flex;justify-content: space-between; ">
+                            <div>Rs. {{item.icost}}</div>
+                            <div style="display: flex;">
+                                <div style="width: 1px;height: 1px;margin-top:9px;margin-right: 10px;" [style.border]="item.iftype==='Veg' ? '3px solid green' : '3px solid red'" [style.background]="item.iftype==='Veg' ? 'green' : 'red' "></div><span [style.color]="item.iftype==='Veg' ? 'green' : 'red' ">{{item.iftype}}</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div style="display: flex;justify-content: space-between; ">
+                            <i class="fas fa-edit text-info p-2" (click)="editItem(item)" id="iconClick"></i>
+                            <i class="fas fa-trash-alt text-danger p-2" (click)="deleteItem(item)" id="iconClick"></i>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--
+ 
+ -->
