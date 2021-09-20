@@ -44,6 +44,7 @@ To-Do list:
     - ng generate guard `<your-guard-name>`
   - Run angular application
     - ng serve --open
+
 - Back-end part
   - Installing STS
       - The easiest way to install STS is right from within Eclipse. Just select Help > Eclipse Marketplace… from the main menu and type “STS” in the search bar of the Eclipse Marketplace dialog.
@@ -53,6 +54,7 @@ To-Do list:
       - On the New Spring Starter Project dialog, you’ll have to choose a name for your project. Let’s call it “HelloWorld”. Select Maven as the build tool, and JAR packaging and your Java version. Assign a Group of “com.developer” for the package name. Artifact is the name of the JAR file you are going to build
   - Project Dependencies
       - In the New Spring Starter Project Dependencies window, use the search field and type “web” into it, we can choose the dependencies we want in out project
+
 - Push Project to Github
   - Initialize the local directory as a Git repository.
     - git init
