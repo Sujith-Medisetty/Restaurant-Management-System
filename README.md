@@ -62,7 +62,7 @@ To-Do list:
   - Initialize the local directory as a Git repository.
     - git init
   - Use git status to know the status of your application
-    - git status
+    - git status 
   - Add the files in your new local repository. This stages them for the first commit.
     - git add .
   - Commit the files that you've staged in your local repository.
