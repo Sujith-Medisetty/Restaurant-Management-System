@@ -36,7 +36,7 @@ To-Do list:
   - install angular
     - npm install -g @angular/cli
   - Crate new Angular Application
-    - ng new <Application-Name>
+    - ng new <application-name>
   - Create Components, Pipes, Modules, Guards, Routing based on requirement
     - ng generate component <component-name>
     - ng generate pipe <pipe-name>
