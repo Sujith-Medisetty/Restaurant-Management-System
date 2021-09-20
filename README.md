@@ -1,7 +1,9 @@
 # Restaurant-Management-System
 
 ## Note:
-**There are 2 more branches 1. Angular Branch contain Angular part of this application. 2. Spring Branch contain Spring part of this application**
+**There are 2 more branches** 
+1. **Angular Branch contain Angular part of this application.**
+2. **Spring Branch contain Spring part of this application.**
 
 ## Project Description: 
 
