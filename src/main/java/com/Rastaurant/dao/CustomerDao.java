@@ -7,7 +7,7 @@ import com.Rastaurant.entity.Customer;
 
 public interface CustomerDao extends JpaRepository<Customer, String>{
 
-	@Query(value="select count(*) from Customer c where c.cemail=?1 and c.cpassword=?2",nativeQuery = true)
+	@Query(value="select count(*) from customer c where c.cemail=?1 and c.cpassword=?2",nativeQuery = true)
 	int verifyCredentials(String email,String password);
 	
 }

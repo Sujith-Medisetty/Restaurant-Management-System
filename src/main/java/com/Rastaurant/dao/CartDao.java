@@ -12,16 +12,16 @@ import com.Rastaurant.entity.Cart;
 
 public interface CartDao extends JpaRepository<Cart, Integer> {
 
-	@Query(value = "select count(*) from Cart where cemail=?1 and iid=?2",nativeQuery = true)
+	@Query(value = "select count(*) from cart where cemail=?1 and iid=?2",nativeQuery = true)
 	public int findByCemail(String cemail,int iid);
 	
-	@Query(value = "select icount from Cart where cemail=?1 and iid=?2",nativeQuery = true)
+	@Query(value = "select icount from cart where cemail=?1 and iid=?2",nativeQuery = true)
 	public int findByCemailAndIidIcount(String cemail,int iid);	
 	
-	@Query(value = "select icount from Cart where cemail=?1",nativeQuery = true)
+	@Query(value = "select icount from cart where cemail=?1",nativeQuery = true)
 	public int getIcount(String email);
 	
-	@Query(value = "select * from Cart where cemail=?1 and iid=?2",nativeQuery = true)
+	@Query(value = "select * from cart where cemail=?1 and iid=?2",nativeQuery = true)
 	public Cart getCartItem(String email,int iid);
 	
 	@Modifying
@@ -29,6 +29,6 @@ public interface CartDao extends JpaRepository<Cart, Integer> {
 	@Query(value = "delete from Cart where cemail=?1 and iid=?2")
 	public void deleteByCemailAndIid(String email,int iid);
 	
-	@Query(value = "select * from Cart where cemail=?1",nativeQuery = true)
+	@Query(value = "select * from cart where cemail=?1",nativeQuery = true)
 	public List<Cart> cartList(String cemail);
 }

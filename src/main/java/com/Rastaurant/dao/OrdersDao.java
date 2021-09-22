@@ -15,7 +15,7 @@ public interface OrdersDao extends JpaRepository<Orders, Integer> {
 	@Query(value="select count(*) from Orders o where o.iid=?1 and o.cemail=?2")
 	public int findByIIdAndCemail(int iid,String cemail);
 	
-	@Query(value="select * from Orders o order by o.date desc",nativeQuery = true)
+	@Query(value="select * from orders o order by o.date desc",nativeQuery = true)
 	public List<Orders> findAllOrders();
 	
     @Modifying
